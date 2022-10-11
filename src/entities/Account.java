@@ -2,7 +2,7 @@ package entities;
 
 public class Account {
 
-    public static double DEPOSIT_FEE_PERCENTAGE = 0.02;
+    private static final double DEPOSIT_FEE_PERCENTAGE = 0.02;
 
     private Long id;
     private Double balance;
@@ -11,7 +11,6 @@ public class Account {
     }
 
     public Account(Long id, Double balance) {
-        super();
         this.id = id;
         this.balance = balance;
     }
