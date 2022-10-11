@@ -4,6 +4,9 @@ import entities.Account;
 
 public class AccountFactory {
 
+    private AccountFactory() {
+    }
+
     public static Account createEmptyAccount() {
         return new Account(1L, 0.0);
     }
