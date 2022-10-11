@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import tests.factory.AccountFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AccountTests {
 
@@ -43,4 +44,22 @@ public class AccountTests {
         assertEquals(result, initialBalance);
     }
 
+    @Test
+    public void withdrawShouldDrecreaseBalanceWhenSufficientBalance() {
+
+        Account acc = AccountFactory.createAccount(800.0);
+
+        acc.withdraw(500.0);
+
+        assertEquals(300.0, acc.getBalance());
+    }
+
+    @Test
+    public void withdrawShouldThrowExceptionWhenInsufficientBalance() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            Account acc = AccountFactory.createAccount(800.0);
+            acc.withdraw(801.0);
+        });
+    }
 }
