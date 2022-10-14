@@ -7,7 +7,7 @@ public class FinancingFactory {
     private FinancingFactory() {
     }
 
-    public static Financing createFinancing() {
-        return new Financing(100000.0, 2000.0, 20);
+    public static Financing createFinancingWithValidData() {
+        return new Financing(100000.0, 2000.0, 80);
     }
 }
