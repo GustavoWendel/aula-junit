@@ -2,52 +2,49 @@ package entities;
 
 public class Financing {
 
-    private double totalAmount;
-    private double income;
-    private int months;
+    private Double totalAmount;
+    private Double income;
+    private Integer months;
 
-    public Financing() {
-    }
-
-    public Financing(double totalAmount, double income, int months) {
+    public Financing(Double totalAmount, Double income, Integer months) {
         validateFinancing(totalAmount, income, months);
         this.totalAmount = totalAmount;
         this.income = income;
         this.months = months;
     }
 
-    public double getTotalAmount() {
+    public Double getTotalAmount() {
         return totalAmount;
     }
 
-    public double getIncome() {
-        return income;
-    }
-
-    public int getMonths() {
-        return months;
-    }
-
-    public void setTotalAmount(double totalAmount) {
+    public void setTotalAmount(Double totalAmount) {
         validateFinancing(totalAmount, income, months);
         this.totalAmount = totalAmount;
     }
 
-    public void setIncome(double income) {
+    public Double getIncome() {
+        return income;
+    }
+
+    public void setIncome(Double income) {
         validateFinancing(totalAmount, income, months);
         this.income = income;
     }
 
-    public void setMonths(int months) {
+    public Integer getMonths() {
+        return months;
+    }
+
+    public void setMonths(Integer months) {
         validateFinancing(totalAmount, income, months);
         this.months = months;
     }
 
-    public double entry() {
+    public Double entry() {
         return totalAmount * 0.2;
     }
 
-    public double quota() {
+    public Double quota() {
         return (totalAmount - entry()) / months;
     }
 
